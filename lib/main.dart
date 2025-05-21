@@ -24,9 +24,9 @@ class MyApp extends StatelessWidget {
         home: BlocBuilder<HomeBloc, HomeState>(
           builder: (context, state) {
             if (state is HomeLoadSuccess) {
-              return loading();
-            } else if (state is HomeLoadInProgress) {
               return success();
+            } else if (state is HomeLoadInProgress) {
+              return loading();
             } else if (state is HomeLoadFailure) {
               return failure();
             }

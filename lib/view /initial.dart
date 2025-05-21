@@ -71,7 +71,7 @@ class initial extends StatelessWidget {
                   // Disparar el evento para cargar los datos
                   context.read<HomeBloc>().add(HomeSearchPressed());
                 },
-                child: const Text('Ver Jugadores'),
+                child: const Text('buscar'),
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 30,

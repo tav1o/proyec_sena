@@ -13,12 +13,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         'https://run.mocky.io/v3/085d585e-960b-4de2-ad77-9b0c9eb29025',
       );
       final response = await http.get(url);
+
       if (response.statusCode == 200) {
         emit(HomeLoadSuccess());
       } else {
         emit(HomeLoadFailure());
       }
-
     });
   }
 }

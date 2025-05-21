@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class loading extends StatelessWidget {
@@ -29,7 +28,7 @@ class loading extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 const Text(
-                  'Cargando 2026...',
+                  'Cargando ...',
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
               ],
