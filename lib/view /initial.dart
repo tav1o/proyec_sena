@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:proyec_sena/bloc/home_bloc.dart';
 
 class initial extends StatelessWidget {
   const initial({
@@ -52,13 +54,33 @@ class initial extends StatelessWidget {
           ),
         ),
         child: Center(
-          child: Text(
+          child: Column(
+            children: [
+              Text(
             "Bienvenido al Mundo del Futbol",
             style: TextStyle(
               color: Colors.white,
               fontSize: 24,
               shadows: [Shadow(blurRadius: 10, color: Colors.black)],
             ),
+          ),
+          
+              SizedBox(height: 30),
+              ElevatedButton(
+                onPressed: () {
+                  // Disparar el evento para cargar los datos
+                  context.read<HomeBloc>().add(HomeSearchPressed());
+                },
+                child: const Text('Ver Jugadores'),
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 30,
+                    vertical: 15,
+                  ),
+                  textStyle: const TextStyle(fontSize: 18),
+                ),
+              ),
+            ],
           ),
         ),
       ),
