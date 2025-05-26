@@ -27,9 +27,7 @@ class Initial extends StatelessWidget {
             ),
           ),
         ),
-        leading: const Icon(Icons.sports_soccer,
-          color: Colors.white,
-          size: 30),
+        leading: const Icon(Icons.sports_soccer, color: Colors.white, size: 30),
         actions: [
           IconButton(
             icon: const Icon(Icons.stars, color: Colors.white, size: 30),
@@ -39,47 +37,89 @@ class Initial extends StatelessWidget {
       ),
       body: Stack(
         children: [
-          // Imagen de fondo
+          
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/jugadores/fubol.png'), 
+                image: AssetImage('assets/jugadores/fubol.png'),
                 fit: BoxFit.cover,
               ),
             ),
           ),
 
+          
           Container(color: Colors.black.withOpacity(0.5)),
 
+          
           Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  "Bienvenido al Mundo del Futbol",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    shadows: [Shadow(blurRadius: 10, color: Colors.black)],
-                  ),
-                ),
-                const SizedBox(height: 30),
-                ElevatedButton(
-                  onPressed: () {
-                    context.read<HomeBloc>().add(HomeSearchPressed());
-                  },
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 30,
-                      vertical: 15,
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  
+                  Image.asset('assets/jugadores/oro.png', height: 200),
+                  const SizedBox(height: 20),
+
+                  const Text(
+                    "Bienvenido al Mundo del Futbol",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 26,
+                      fontWeight: FontWeight.bold,
+                      shadows: [
+                        Shadow(
+                          blurRadius: 5,
+                          color: Colors.black54,
+                          offset: Offset(2, 2),
+                        ),
+                      ],
                     ),
-                    textStyle: const TextStyle(fontSize: 18),
-                    backgroundColor: Colors.orange[700],
+                    textAlign: TextAlign.center,
                   ),
-                  child: const Text('Buscar'),
-                ),
-              ],
+
+                  const SizedBox(height: 10),
+
+                  const Text(
+                    "Explora estadísticas, jugadores y premios",
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 16,
+                      fontStyle: FontStyle.italic,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+
+                  const SizedBox(height: 30),
+
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      context.read<HomeBloc>().add(HomeSearchPressed());
+                    },
+                    icon: const Icon(Icons.search),
+                    label: const Text('Buscar'),
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 30,
+                        vertical: 15,
+                      ),
+                      textStyle: const TextStyle(fontSize: 18),
+                      backgroundColor: Colors.orange[700],
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 40),
+
+                  Image.asset(
+                    'assets/jugadores/ranking.png',
+                    height: 300,
+                  
+                  ),
+                ],
+              ),
             ),
           ),
         ],
