@@ -52,6 +52,23 @@ class success extends StatelessWidget {
                   Text('Años: ${Jugador.anos.join(', ')}'),
                 ],
               ),
+              trailing: IconButton(
+                icon: Icon(
+                  Icons.emoji_events,
+                  color: Colors.amber[700],
+                  size: 30,
+                ),
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                        '${Jugador.nombre} ha ganado el Balón de Oro',
+                      ),
+                      duration: Duration(seconds: 2),
+                    ),
+                  );
+                },
+              ),
             ),
           );
         },
@@ -59,5 +76,3 @@ class success extends StatelessWidget {
     );
   }
 }
-
-

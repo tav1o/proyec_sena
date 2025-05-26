@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
             } else if (state is HomeLoadFailure) {
               return failure();
             }
-            return initial();
+            return Initial();
           },
         ),
       ),
